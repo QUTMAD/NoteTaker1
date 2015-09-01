@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
+	<StackLayout>
+		<ScrollView>
+			<ListView x:Name="NoteListView">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<StackLayout>
+									<Label x:Name = "TitleTextCell" Text="{Binding = titleText}"/>
+									<Label x:Name = "TimestampTextCell" Text="{Binding = TimeStamp}"/>
+									<Label x:Name = "ActionRequiredFlag" Text="{Binding = ActionRequiredFlag}"/>
+								</StackLayout>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</ScrollView>
+		<Button Text = "Details" Clicked="ButtonClicked"/>
+	</StackLayout>
+</NavigationPage>

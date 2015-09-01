@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaker1", "NoteTaker1\NoteTaker1.csproj", "{C7C97D41-BF80-4859-98E9-B55EA3EE2A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaker1.Droid", "Droid\NoteTaker1.Droid.csproj", "{B1F2E2EA-6564-44BC-B6D5-5BE67A9963F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaker1.UITests", "UITests\NoteTaker1.UITests.csproj", "{7199B194-0B82-4078-A104-1BB635F02C13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteTaker1.Data", "NoteTaker1.Data\NoteTaker1.Data.csproj", "{3A29130A-202F-4F65-A7A9-1A2F30BFB297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A29130A-202F-4F65-A7A9-1A2F30BFB297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A29130A-202F-4F65-A7A9-1A2F30BFB297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A29130A-202F-4F65-A7A9-1A2F30BFB297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A29130A-202F-4F65-A7A9-1A2F30BFB297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7199B194-0B82-4078-A104-1BB635F02C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7199B194-0B82-4078-A104-1BB635F02C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7199B194-0B82-4078-A104-1BB635F02C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7199B194-0B82-4078-A104-1BB635F02C13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F2E2EA-6564-44BC-B6D5-5BE67A9963F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F2E2EA-6564-44BC-B6D5-5BE67A9963F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F2E2EA-6564-44BC-B6D5-5BE67A9963F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F2E2EA-6564-44BC-B6D5-5BE67A9963F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C97D41-BF80-4859-98E9-B55EA3EE2A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C97D41-BF80-4859-98E9-B55EA3EE2A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C97D41-BF80-4859-98E9-B55EA3EE2A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C97D41-BF80-4859-98E9-B55EA3EE2A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
