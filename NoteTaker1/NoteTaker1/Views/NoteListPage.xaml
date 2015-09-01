@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
 	<StackLayout>
 		<ScrollView>
 			<ListView x:Name="NoteListView">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<ViewCell.View>
-								<StackLayout>
-									<Label x:Name = "TitleTextCell" Text="{Binding = titleText}"/>
-									<Label x:Name = "TimestampTextCell" Text="{Binding = TimeStamp}"/>
-									<Label x:Name = "ActionRequiredFlag" Text="{Binding = ActionRequiredFlag}"/>
-								</StackLayout>
-							</ViewCell.View>
+							<Grid >
+								<Grid.RowDefinitions>
+									<RowDefinition Height="1*"/>
+									<RowDefinition Height="1*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="2*"/>
+									<ColumnDefinition Width="1*"/>
+								</Grid.ColumnDefinitions>
+								<Label Grid.Row="0" Grid.Column="0" Text="{Binding TitleText}" TextColor ="White"/>
+								<Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding TimeStamp}" TextColor ="White"/>
+								<Label Grid.Row="0" Grid.Column="1" Text="{Binding ActionRequiredFlag}" TextColor ="White"/>
+							</Grid>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
@@ -20,4 +26,4 @@
 		</ScrollView>
 		<Button Text = "Details" Clicked="ButtonClicked"/>
 	</StackLayout>
-</NavigationPage>
+</ContentPage>

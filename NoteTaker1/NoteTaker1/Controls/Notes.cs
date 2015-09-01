@@ -4,9 +4,9 @@ namespace NoteTaker1
 {
 	public class Notes
 	{
-		private string titleText;
-		public string TimeStamp;
-		public string ActionRequiredFlag;
+		public string TitleText { get; set; }
+		public string TimeStamp { get; set; }
+		public string ActionRequiredFlag { get; set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NoteTaker1.Notes"/> class.
@@ -16,7 +16,7 @@ namespace NoteTaker1
 		/// <param name="actionRequiredFlag">Action required flag.</param>
 		public Notes (string titleText, string timeStamp = "", string actionRequiredFlag = "")
 		{
-			titleText = titleText;
+			TitleText = titleText;
 			TimeStamp = timeStamp;
 			ActionRequiredFlag = actionRequiredFlag;
 		}
