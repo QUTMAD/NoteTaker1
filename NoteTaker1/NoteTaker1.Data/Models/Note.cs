@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace NoteTaker1
+namespace NoteTaker1.Data
 {
-	public class Notes
+	public class Note
 	{
 		public string titleText { get; set; }
 		public string TimeStamp { get; set; }
@@ -14,7 +14,7 @@ namespace NoteTaker1
 		/// <param name="titleText">Title text.</param>
 		/// <param name="timeStamp">Time stamp.</param>
 		/// <param name="actionRequiredFlag">Action required flag.</param>
-		public Notes (string titleText, string timeStamp = "", string actionRequiredFlag = "")
+		public Note (string titleText, string timeStamp = "", string actionRequiredFlag = "")
 		{
 			this.titleText = titleText;
 			TimeStamp = timeStamp;

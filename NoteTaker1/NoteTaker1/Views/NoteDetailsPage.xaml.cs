@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using NoteTaker1.Data.ViewModel;
+using NoteTaker1.Data;
 
 namespace NoteTaker1
 {
@@ -9,6 +11,7 @@ namespace NoteTaker1
 	{
 		public NoteDetailsPage ()
 		{
+			BindingContext = App.Locator.NoteDetail;
 			InitializeComponent ();
 			Title = "Details";
 		}

@@ -4,7 +4,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="NoteTaker1.NoteListPage">
 	<StackLayout>
 		<ScrollView>
-			<ListView x:Name="NoteListView">
+			<ListView x:Name="NoteListView" ItemsSource="{Binding NoteList}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
