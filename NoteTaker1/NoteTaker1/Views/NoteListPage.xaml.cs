@@ -18,26 +18,6 @@ namespace NoteTaker1
 			noteList.Add (new Notes ("FirstNote"){ TimeStamp = "Nowish", ActionRequiredFlag = "N" });
 			noteList.Add (new Notes ("SecondNote"){ TimeStamp = "Yesterday", ActionRequiredFlag = "Y" });
 			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
-			noteList.Add (new Notes ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
 			NoteListView.ItemsSource = noteList;
 
 		}
