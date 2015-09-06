@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+x:Class="NoteTaker1.NoteListPage">
 	<StackLayout>
 		<ScrollView>
 			<ListView x:Name="NoteListView">
@@ -15,15 +17,15 @@
 									<ColumnDefinition Width="2*"/>
 									<ColumnDefinition Width="1*"/>
 								</Grid.ColumnDefinitions>
-								<Label Grid.Row="0" Grid.Column="0" Text="{Binding TitleText}" TextColor ="White"/>
 								<Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding TimeStamp}" TextColor ="White"/>
 								<Label Grid.Row="0" Grid.Column="1" Text="{Binding ActionRequiredFlag}" TextColor ="White"/>
+								<Label Grid.Row="0" Grid.Column="0" Text="{Binding titleText}" TextColor ="White"/>
 							</Grid>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
 		</ScrollView>
-		<Button Text = "Details" Clicked="ButtonClicked"/>
+		<Button Text = "Details" Clicked = "ButtonClicked" />
 	</StackLayout>
 </ContentPage>

@@ -4,7 +4,7 @@ namespace NoteTaker1
 {
 	public class Notes
 	{
-		public string TitleText { get; set; }
+		public string titleText { get; set; }
 		public string TimeStamp { get; set; }
 		public string ActionRequiredFlag { get; set; }
 
@@ -16,7 +16,7 @@ namespace NoteTaker1
 		/// <param name="actionRequiredFlag">Action required flag.</param>
 		public Notes (string titleText, string timeStamp = "", string actionRequiredFlag = "")
 		{
-			TitleText = titleText;
+			this.titleText = titleText;
 			TimeStamp = timeStamp;
 			ActionRequiredFlag = actionRequiredFlag;
 		}
