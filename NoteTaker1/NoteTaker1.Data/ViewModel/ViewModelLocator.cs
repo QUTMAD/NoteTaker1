@@ -24,6 +24,8 @@ namespace NoteTaker1.Data.ViewModel
     /// </summary>
     public class ViewModelLocator
     {
+		public const string NoteListPageKey = "NoteListPage";
+		public const string NoteDetailPageKey = "NoteDetailPage";
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
@@ -42,15 +44,25 @@ namespace NoteTaker1.Data.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
 
-            SimpleIoc.Default.Register<NoteListViewModel>();
-			SimpleIoc.Default.Register<NoteDetailViewModel>();
+			SimpleIoc.Default.Register<NoteListViewModel>(() => 
+				{
+					return new NoteListViewModel(
+						SimpleIoc.Default.GetInstance<IMyNavigationService>()
+					);
+				});
+			SimpleIoc.Default.Register<NoteDetailViewModel>(() => 
+				{
+					return new NoteDetailViewModel(
+						SimpleIoc.Default.GetInstance<IMyNavigationService>()
+					);
+				});
         }
 
         public NoteListViewModel NoteList
         {
             get
             {
-                return ServiceLocator.Current.GetInstance<NoteListViewModel>();
+				return ServiceLocator.Current.GetInstance<NoteListViewModel>();
             }
         }
         

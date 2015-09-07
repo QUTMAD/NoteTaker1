@@ -5,11 +5,12 @@ using NoteTaker1.Data.ViewModel;
 
 namespace NoteTaker1
 {
-	public partial class NoteListPage : ContentPage
+	public partial class NoteListPage : BaseView
 	{
 		public NoteListPage ()
 		{
 			InitializeComponent ();
+			base.Init ();
 			BindingContext = App.Locator.NoteList;
 
 
@@ -19,6 +20,7 @@ namespace NoteTaker1
 		{
 			Navigation.PushAsync (new NoteDetailsPage ());
 		}
+
 	}
 }
 

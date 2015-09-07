@@ -1,6 +1,9 @@
 using GalaSoft.MvvmLight;
 using System.Collections.Generic;
 using System;
+using System.Windows.Input;
+using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace NoteTaker1.Data.ViewModel
 {
@@ -18,21 +21,25 @@ namespace NoteTaker1.Data.ViewModel
     /// </summary>
     public class NoteListViewModel : ViewModelBase
     {
-        private List<Note> noteList = new List<Note>();
-		public List<Note> NoteList {
+		private IMyNavigationService navigationService;
+		private ObservableCollection<Note> noteList = new ObservableCollection<Note>();
+		public ObservableCollection<Note> NoteList {
 			get { return noteList; }
 			set {
 				if (value != null && value != noteList) {
 					noteList = value;
-					RaisePropertyChanged (() => NoteList);
 				}
 			}
 		}
+
+
+		public ICommand NewNoteCommand { get; private set; }
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public NoteListViewModel()
+		public NoteListViewModel(IMyNavigationService navigationService)
         {
+			this.navigationService = navigationService;
             ////if (IsInDesignMode)
             ////{
             ////    // Code runs in Blend --> create design time data.
@@ -41,12 +48,11 @@ namespace NoteTaker1.Data.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
-			var firstNoate = new Note ("FirstNote", DateTime.Now.ToString());
-			firstNoate.ActionRequiredFlag = "N";
-			NoteList.Add (firstNoate);
-			NoteList.Add (new Note ("FirstNote"){ TimeStamp = "Nowish", ActionRequiredFlag = "N" });
-			NoteList.Add (new Note ("SecondNote"){ TimeStamp = "Yesterday", ActionRequiredFlag = "Y" });
-			NoteList.Add (new Note ("ThirdNote"){ TimeStamp = "theDaybefore", ActionRequiredFlag = "N" });
+
+			NewNoteCommand = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.NoteDetailPageKey);
+			});
         }
+
     }
 }

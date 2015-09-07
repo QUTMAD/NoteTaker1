@@ -7,12 +7,13 @@ using NoteTaker1.Data;
 
 namespace NoteTaker1
 {
-	public partial class NoteDetailsPage : ContentPage
+	public partial class NoteDetailsPage : BaseView
 	{
 		public NoteDetailsPage ()
 		{
 			BindingContext = App.Locator.NoteDetail;
 			InitializeComponent ();
+			base.Init ();
 			Title = "Details";
 		}
 	}
