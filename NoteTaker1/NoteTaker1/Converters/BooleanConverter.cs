@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NoteTaker1
+namespace NoteTaker1.Converters
 {
 	public class BooleanConverter : ValueConverterBase<object,bool>
 	{
@@ -9,6 +9,11 @@ namespace NoteTaker1
 				return true;
 			else
 				return false;
+		}
+
+		protected override object ConvertValueBack (bool output, object parameter)
+		{
+			return output.ToString ();
 		}
 	}
 }

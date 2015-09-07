@@ -3,7 +3,7 @@
 	<StackLayout Padding = "10,20,10,30" Orientation="Vertical" >
 		<Entry HorizontalOptions= "FillAndExpand"  x:Name = "TitleEntry" Placeholder="title" Text="{Binding NoteTitle}" />
 		<Editor HorizontalOptions = "FillAndExpand" VerticalOptions = "FillAndExpand"  x:Name ="DetailsEditor" Text="{Binding NoteDetail}"/>
-		<Switch HorizontalOptions = "StartAndExpand" x:Name = "ActionFlagSwitch" IsToggled="{Binding NoteActionFlag, Converter = BooleanConverter}"/>
+		<Switch HorizontalOptions = "StartAndExpand" x:Name = "ActionFlagSwitch" IsToggled="{Binding NoteActionFlag}"/>
 		<Button HorizontalOptions = "CenterAndExpand" Text="Save" Command = "{Binding SaveNoteCommand}"/>
 	</StackLayout>
 </BaseView>

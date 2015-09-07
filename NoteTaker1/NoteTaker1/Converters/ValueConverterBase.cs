@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using System.Globalization;
 
-namespace NoteTaker1
+namespace NoteTaker1.Converters
 {
 		/// <summary>
 		/// A base class with basic value-conversion functionality.
