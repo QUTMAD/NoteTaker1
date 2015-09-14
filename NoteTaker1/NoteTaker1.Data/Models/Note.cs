@@ -9,6 +9,8 @@ namespace NoteTaker1.Data
 		public string NoteDetail { get; set; }
 		public string ActionRequiredFlag { get; set; }
 
+		public Note(){
+		}
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NoteTaker1.Notes"/> class.
 		/// </summary>

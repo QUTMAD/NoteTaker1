@@ -22,13 +22,12 @@ namespace NoteTaker1.Data.ViewModel
     public class NoteListViewModel : ViewModelBase
     {
 		private IMyNavigationService navigationService;
-		private ObservableCollection<Note> noteList = new ObservableCollection<Note>();
+
 		public ObservableCollection<Note> NoteList {
-			get { return noteList; }
-			set {
-				if (value != null && value != noteList) {
-					noteList = value;
-				}
+			get {
+				var database = new NoteDatabase ();
+				var x = database.GetAll ();
+				return new ObservableCollection<Note> (x);
 			}
 		}
 
@@ -49,10 +48,12 @@ namespace NoteTaker1.Data.ViewModel
             ////    // Code runs "for real"
             ////}
 
-			NewNoteCommand = new Command (() => {
-				this.navigationService.NavigateTo(ViewModelLocator.NoteDetailPageKey);
-			});
+			NewNoteCommand = new Command (() => this.navigationService.NavigateTo (ViewModelLocator.NoteDetailPageKey));
         }
+
+		public void OnAppearing(){
+			RaisePropertyChanged (() => NoteList);
+		}
 
     }
 }

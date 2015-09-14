@@ -15,7 +15,8 @@ namespace NoteTaker1.Data
         public String NoteTitle
         {
             get { return noteTitle; }
-            set { noteTitle = value; }
+			set { noteTitle = value;
+				RaisePropertyChanged(() => NoteTitle); }
         }
 
         private string noteDetail;
@@ -23,7 +24,8 @@ namespace NoteTaker1.Data
         public string NoteDetail
         {
             get { return noteDetail; }
-            set { noteDetail = value; }
+            set { noteDetail = value;
+				RaisePropertyChanged(() => NoteDetail); }
         }
 
         private bool noteActionFlag;
@@ -31,19 +33,21 @@ namespace NoteTaker1.Data
         public bool NoteActionFlag
         {
             get { return noteActionFlag; }
-            set { noteActionFlag = value; }
+            set { noteActionFlag = value;
+				RaisePropertyChanged(() => NoteActionFlag); }
         }
 
 
 		public NoteDetailViewModel (IMyNavigationService navigationService)
 		{
+			var database = new NoteDatabase();
 			SaveNoteCommand = new Command (() => {
-				var notelistVM = ServiceLocator.Current.GetInstance<NoteListViewModel>();
-
-				notelistVM.NoteList.Add(new Note(NoteTitle, DateTime.Now.ToString(),NoteActionFlag.ToString(),NoteDetail));
+				database.InsertOrUpdateNote(new Note(NoteTitle,DateTime.Now.ToString(),NoteActionFlag.ToString(),NoteDetail));
 				navigationService.GoBack();
 			});
 		}
+
+
 	}
 }
 
