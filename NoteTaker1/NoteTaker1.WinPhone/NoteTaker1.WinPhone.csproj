@@ -165,7 +165,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
 </Project>
