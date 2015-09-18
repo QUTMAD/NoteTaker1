@@ -19,9 +19,9 @@ x:Class="NoteTaker1.NoteListPage">
 										<ColumnDefinition Width="2*"/>
 										<ColumnDefinition Width="1*"/>
 									</Grid.ColumnDefinitions>
-									<Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding TimeStamp}" TextColor ="White"/>
-									<Label Grid.Row="0" Grid.Column="1" Text="{Binding ActionRequiredFlag}" TextColor ="White"/>
-									<Label Grid.Row="0" Grid.Column="0" Text="{Binding titleText}" TextColor ="White"/>
+									<Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding TimeStamp}"/>
+									<Label Grid.Row="0" Grid.Column="1" Text="{Binding ActionRequiredFlag}" />
+									<Label Grid.Row="0" Grid.Column="0" Text="{Binding titleText}"/>
 								</Grid>
 							</ViewCell>
 						</DataTemplate>

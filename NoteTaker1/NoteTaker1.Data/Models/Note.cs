@@ -4,7 +4,6 @@ namespace NoteTaker1.Data
 {
 	public class Note
 	{
-		public int key { get; set;}
 		public string titleText { get; set; }
 		public string TimeStamp { get; set; }
 		public string NoteDetail { get; set; }

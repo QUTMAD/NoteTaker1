@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace NoteTaker1.IOS
 {
@@ -16,6 +17,7 @@ namespace NoteTaker1.IOS
 			LoadApplication (new NoteTaker1.App ());  // method is new in 1.3
 
 			return base.FinishedLaunching (app, options);
+
 		}
 	}
 }
