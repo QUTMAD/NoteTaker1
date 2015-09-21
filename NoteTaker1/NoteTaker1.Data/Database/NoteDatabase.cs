@@ -4,11 +4,17 @@ using Xamarin.Forms;
 using System.Linq;
 using System.Collections.Generic;
 using GalaSoft.MvvmLight.Ioc;
+using Microsoft.WindowsAzure.MobileServices;
+using System.Threading.Tasks;
 
 namespace NoteTaker1.Data
 {
 	public class NoteDatabase
 	{
+		public static MobileServiceClient MobileService = new MobileServiceClient(
+			"https://qutmad.azure-mobile.net/",
+			"lLPKiDOkWSFwlpYkKWvcHQxxhqUUpj89"
+		);
 		SQLiteConnection database;
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NoteTaker1.Data.NoteDatabase"/> class.
@@ -28,10 +34,15 @@ namespace NoteTaker1.Data
 		/// Gets all.
 		/// </summary>
 		/// <returns>The all.</returns>
-		public List<Note> GetAll(){
-			var items = database.Table<Note> ().ToList<Note>();
+		public async Task<List<Note>> GetAll(){
+//			var items = database.Table<Note> ().ToList<Note>();
+//
+//			return items;
 
-			return items;
+			// OR
+			var x = await MobileService.GetTable<Note> ().ToListAsync ();
+			return x;
+
 		}
 
 		/// <summary>
@@ -39,9 +50,17 @@ namespace NoteTaker1.Data
 		/// </summary>
 		/// <returns>The or update note.</returns>
 		/// <param name="note">Note.</param>
-		public int InsertOrUpdateNote(Note note){
-			return database.Table<Note> ().Where (x => x.NoteId == note.NoteId).Any() 
-				? database.Update (note) : database.Insert (note);
+		public async Task<int> InsertOrUpdateNote(Note note){
+//			return database.Table<Note> ().Where (x => x.NoteId == note.NoteId).Any () 
+//				? database.Update (note) : database.Insert (note);
+			var lookup = await MobileService.GetTable<Note> ().LookupAsync (note.id);
+			if (lookup != null) {
+				await MobileService.GetTable<Note> ().InsertAsync (note);
+			} else {
+				await MobileService.GetTable<Note> ().UpdateAsync (note);
+			}
+			return 1;
+		
 		}
 
 		/// <summary>
@@ -50,7 +69,7 @@ namespace NoteTaker1.Data
 		/// <returns>The note.</returns>
 		/// <param name="key">Key.</param>
 		public Note GetNote(int key){
-			return database.Table<Note> ().First (t => t.NoteId == key); 
+			return database.Table<Note> ().First (t => t.id == key); 
 		}
 
 		/// <summary>
@@ -61,6 +80,7 @@ namespace NoteTaker1.Data
 		public List<Note> SearchTitle(string searchTerm){
 			return database.Table<Note> ().Where (x => x.titleText.Contains (searchTerm)).ToList ();
 			//return database.Query<Note> ("Select * from Note where titleText like *?*", searchTerm).ToList();
+
 		}
 		/// <summary>
 		/// Searches the title.

@@ -60,15 +60,15 @@ namespace NoteTaker1.Data.ViewModel
 			NoteListCommand = new Command(() => {
 				NoteList = new ObservableCollection<Note>(database.SearchTitleDetail(SearchTerm));
 			});
-			ClearSearchCommand = new Command (() => {
-				NoteList = new ObservableCollection<Note> (database.GetAll ());
+			ClearSearchCommand = new Command ( async () => {
+				NoteList = new ObservableCollection<Note> ( await database.GetAll ());
 				SearchTerm = string.Empty;
 			});
         }
 
-		public void OnAppearing(){
+		public async void OnAppearing(){
 			var database = new NoteDatabase ();
-			NoteList = new ObservableCollection<Note> (database.GetAll ());
+			NoteList = new ObservableCollection<Note> (await database.GetAll ());
 		}
 
     }

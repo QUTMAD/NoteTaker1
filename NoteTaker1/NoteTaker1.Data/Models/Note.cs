@@ -6,7 +6,7 @@ namespace NoteTaker1.Data
 	public class Note
 	{
 		[PrimaryKey, AutoIncrement]
-		public int NoteId { get; set; }
+		public int id { get; set; }
 		[NotNull, MaxLength(128)]
 		public string titleText { get; set; }
 		public DateTime TimeStamp { get; set; }

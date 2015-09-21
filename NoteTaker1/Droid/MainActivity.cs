@@ -27,7 +27,7 @@ namespace NoteTaker1.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			//TODO show IOC vs Dependency injection
-//			SimpleIoc.Default.Register<ISqlite> (new SqliteDroid ());
+			SimpleIoc.Default.Register<ISqlite> (() => new SqliteDroid ());
 			LoadApplication (new App ());
 
 		}
