@@ -2,10 +2,10 @@
 using NoteTaker1.Data;
 using SQLite.Net;
 using System.IO;
+[assembly: Dependency(typeof(SqliteWinPhone))]
 
 namespace NoteTaker1.Droid
 {
-	[assembly: Dependency (typeof (SqliteWinPhone))]
 	public class SqliteWinPhone : ISqlite
 	{
 		public SqliteWinPhone(){
