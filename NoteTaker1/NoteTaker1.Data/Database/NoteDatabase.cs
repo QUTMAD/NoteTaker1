@@ -28,7 +28,7 @@ namespace NoteTaker1.Data
 		}
 
 		public int InsertOrUpdateNote(Note note){
-			return database.Table<Note> ().Where (x => x.titleText == note.titleText).Count () > 0 
+			return database.Table<Note> ().Where (x => x.titleText == note.titleText && x.TimeStamp == note.TimeStamp ).Count () > 0 
 				? database.Update (note) : database.Insert (note);
 		}
 
