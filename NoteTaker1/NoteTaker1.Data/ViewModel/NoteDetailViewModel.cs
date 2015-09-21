@@ -42,7 +42,7 @@ namespace NoteTaker1.Data
 		{
 			var database = new NoteDatabase();
 			SaveNoteCommand = new Command (() => {
-				database.InsertOrUpdateNote(new Note(NoteTitle,DateTime.Now.ToString(),NoteActionFlag.ToString(),NoteDetail));
+				database.InsertOrUpdateNote(new Note(NoteTitle, DateTime.Now, NoteActionFlag,NoteDetail));
 				navigationService.GoBack();
 			});
 		}

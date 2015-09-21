@@ -22,37 +22,53 @@ namespace NoteTaker1.Data.ViewModel
     public class NoteListViewModel : ViewModelBase
     {
 		private IMyNavigationService navigationService;
-
+		private ObservableCollection<Note> noteList{ get; set;}
 		public ObservableCollection<Note> NoteList {
-			get {
-				var database = new NoteDatabase ();
-				var x = database.GetAll ();
-				return new ObservableCollection<Note> (x);
+			get {return noteList;}
+			set{ noteList = value; 
+				RaisePropertyChanged (() => NoteList);
 			}
 		}
 
 
 		public ICommand NewNoteCommand { get; private set; }
+
+		public ICommand NoteListCommand {get; private set;}
+
+		public ICommand ClearSearchCommand { get; private set; }
+
+		private string searchTerm { get; set; }
+
+		public string SearchTerm{
+			get { return searchTerm; }
+			set { 
+				if (value!= null) {
+					searchTerm = value;
+					RaisePropertyChanged (() => SearchTerm);
+				}
+			}
+		}
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
 		public NoteListViewModel(IMyNavigationService navigationService)
         {
 			this.navigationService = navigationService;
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+			var database = new NoteDatabase ();
 
 			NewNoteCommand = new Command (() => this.navigationService.NavigateTo (ViewModelLocator.NoteDetailPageKey));
+			NoteListCommand = new Command(() => {
+				NoteList = new ObservableCollection<Note>(database.SearchTitleDetail(SearchTerm));
+			});
+			ClearSearchCommand = new Command (() => {
+				NoteList = new ObservableCollection<Note> (database.GetAll ());
+				SearchTerm = string.Empty;
+			});
         }
 
 		public void OnAppearing(){
-			RaisePropertyChanged (() => NoteList);
+			var database = new NoteDatabase ();
+			NoteList = new ObservableCollection<Note> (database.GetAll ());
 		}
 
     }
