@@ -7,7 +7,7 @@ x:Class="NoteTaker1.NoteListPage">
 			<StackLayout>
 				<Button Text = "Add New Note" Command = "{Binding NewNoteCommand}" />
 				<Entry Placeholder="Search Term" Text="{Binding SearchTerm}"/>
-				<Button Text = "Search Note for Blah" Command = "{Binding NoteListCommand}" />
+				<Button Text = "Search Note" Command = "{Binding NoteListCommand}" />
 				<Button Text = "Clear Search" Command = "{Binding ClearSearchCommand}"/>
 				<ListView x:Name="NoteListView" ItemsSource="{Binding NoteList, Mode=TwoWay}">
 					<ListView.ItemTemplate>
