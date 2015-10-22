@@ -79,16 +79,20 @@ namespace NoteTaker1.Data
 		/// <param name="searchTerm">Search term.</param>
 		public List<Note> SearchTitleDetail(string searchTerm){
 			//Basic LINQ
-			var value =  database.Table<Note> ().Where (x => x.titleText.Contains (searchTerm) || x.NoteDetail.Contains (searchTerm)).ToList ();
+			var value =  database.Table<Note> ().Where (x => x.titleText.Contains (searchTerm) 
+            || x.NoteDetail.Contains (searchTerm)).ToList ();
 
 			//Basic Query
-			value = database.Query<Note> ("Select * from Note where NoteDetail like ? OR titleText like ?", searchTerm).ToList();
+			value = database.Query<Note> ("Select * from Note where NoteDetail like ? OR titleText like ?", "%" +searchTerm + "%").ToList();
 
 			//LINQ
 			var valueList = 
 				from note in database.Table<Note> ()
-				where note.titleText.Contains (searchTerm) || note.NoteDetail.Contains (searchTerm)
-				select note;
+				where note.titleText.Contains (searchTerm) 
+                || note.NoteDetail.Contains (searchTerm)
+                orderby note.TimeStamp
+                select note
+                ;
 			value = valueList.ToList ();
 			return value;
 		}
