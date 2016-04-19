@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NoteTaker1.NoteListPage">
 	<StackLayout>
 		<ScrollView>
 			<ListView x:Name="NoteListView">
@@ -18,6 +18,6 @@
 				</ListView.ItemTemplate>
 			</ListView>
 		</ScrollView>
-		<Button Text = "Details" Clicked="ButtonClicked"/>
+		<Button Text = "Details"/>
 	</StackLayout>
-</NavigationPage>
+</ContentPage>

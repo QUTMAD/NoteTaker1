@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace NoteTaker1
 {
-	public partial class NoteListPage : NavigationPage
+	public partial class NoteListPage : ContentPage
 	{
 		public NoteListPage ()
 		{
@@ -19,9 +19,6 @@ namespace NoteTaker1
 //			NoteListView.ItemsSource = noteList;
 		}
 
-		public static void ButtonClicked (EventArgs e){
-//			Navigation.PushAsync (new NoteDetailsPage());
-		}
 	}
 }
 

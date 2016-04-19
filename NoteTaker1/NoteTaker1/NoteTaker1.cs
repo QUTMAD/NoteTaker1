@@ -9,7 +9,7 @@ namespace NoteTaker1
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage(new NoteDetailsPage());
+			MainPage = new NavigationPage(new NoteListPage());
 		}
 
 		protected override void OnStart ()
